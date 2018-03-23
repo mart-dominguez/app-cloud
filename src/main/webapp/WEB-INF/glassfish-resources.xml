@@ -29,7 +29,7 @@
                             steady-pool-size="8"
                             validate-atmost-once-period-in-seconds="0"
                             wrap-jdbc-objects="false">
-        <property name="URL" value="jdbc:mysql://172.18.0.2:3306/tp-aepad"/>
+        <property name="URL" value="jdbc:mysql://172.18.0.2:3306/tp-aepad?autoReconnect=true"/>
         <property name="User" value="root"/>
         <property name="Password" value="root"/>
     </jdbc-connection-pool>
