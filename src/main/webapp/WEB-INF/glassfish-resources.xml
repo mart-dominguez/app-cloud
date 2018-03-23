@@ -24,7 +24,7 @@
                             name="jdbc/testConnPool"
                             non-transactional-connections="false"
                             pool-resize-quantity="2"
-                            res-type="javax.sql.DataSource"
+                            res-type="javax.sql.ConnectionPoolDataSource"
                             statement-timeout-in-seconds="-1"
                             steady-pool-size="8"
                             validate-atmost-once-period-in-seconds="0"
@@ -35,7 +35,7 @@
     </jdbc-connection-pool>
  
     <!-- Creates a DataSource called "jdbc/testDS" for accessing the connection pool -->
-    <jdbc-resource enabled="true" jndi-name="jdbc/StressDS" object-type="user" pool-name="jdbc/testConnPool">
+    <jdbc-resource enabled="true" jndi-name="jdbc/stressDS" object-type="user" pool-name="jdbc/testConnPool">
         <description>Test DataSource</description>
     </jdbc-resource>
  
