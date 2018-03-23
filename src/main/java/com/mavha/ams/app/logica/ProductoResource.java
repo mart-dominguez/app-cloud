@@ -5,6 +5,9 @@
  */
 package com.mavha.ams.app.logica;
 
+import com.codahale.metrics.annotation.Counted;
+import com.codahale.metrics.annotation.Metered;
+import com.codahale.metrics.annotation.Timed;
 import com.mavha.ams.app.modelo.Producto;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -44,11 +47,32 @@ public class ProductoResource {
      */
     @GET
     @Produces(MediaType.APPLICATION_XML)
+    @Counted
     public List<Producto> getXml() {
         //TODO return proper representation object
         return em.createQuery("SELECT p FROM Producto p").getResultList();
     }
 
+    @Path("comojson")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Timed
+    public List<Producto> getComoJson() {
+        //TODO return proper representation object
+        return em.createQuery("SELECT p FROM Producto p").getResultList();
+    }
+
+
+    @Path("comojson2")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Metered
+    public List<Producto> getComoJson2() {
+        //TODO return proper representation object
+        return em.createQuery("SELECT p FROM Producto p").getResultList();
+    }
+    
+    
     /**
      * PUT method for updating or creating an instance of ProductoResource
      * @param content representation for the resource
