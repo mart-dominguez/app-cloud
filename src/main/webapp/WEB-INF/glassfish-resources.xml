@@ -7,9 +7,10 @@
                             datasource-classname="com.mysql.jdbc.jdbc2.optional.MysqlDataSource"                           
                             name="jdbc/testConnPool"
                             res-type="javax.sql.ConnectionPoolDataSource">
-        <property name="URL" value="jdbc:mysql://172.18.0.2:3306/tp-aepad?autoReconnect=true&useSSL=false"/>
+        <property name="URL" value="jdbc:mysql://172.18.0.2:3306/tp-aepad?autoReconnect=true"/>
         <property name="User" value="root"/>
         <property name="Password" value="root"/>
+        <property name="useSSL" value="false" />
     </jdbc-connection-pool>
  
     <!-- Creates a DataSource called "jdbc/testDS" for accessing the connection pool -->
